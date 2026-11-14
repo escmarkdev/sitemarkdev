@@ -352,7 +352,6 @@
                 <button data-section="blog"><i class="fas fa-blog"></i> <span>Blog</span></button>
                 <button data-section="media"><i class="fas fa-photo-video"></i> <span>Mídia</span></button>
                 <button data-section="testimonials"><i class="fas fa-comment-dots"></i> <span>Testemunhos</span></button>
-                <button data-section="contacts"><i class="fas fa-envelope"></i> <span>Contatos</span></button>
                 <button data-section="social"><i class="fas fa-share-alt"></i> <span>Redes Sociais</span></button>
             </nav>
             <div class="sidebar-footer">
@@ -444,20 +443,6 @@
                     <button class="btn btn-primary" onclick="openTestimonialModal()"><i class="fas fa-plus"></i> Novo Depoimento</button>
                 </div>
                 <div id="testimonialsList"></div>
-            </section>
-
-            <section class="page-section" id="sec-contacts">
-                <div class="page-header">
-                    <div>
-                        <h1>Contatos Recebidos</h1>
-                        <p>Mensagens enviadas através do formulário de contato</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div id="contactsList">
-                        <div class="empty-state"><i class="fas fa-inbox"></i><p>Nenhum contato recebido ainda.</p></div>
-                    </div>
-                </div>
             </section>
 
             <section class="page-section" id="sec-social">
@@ -704,7 +689,6 @@
             await Promise.all([
                 loadSeo(),
                 loadMedia(),
-                loadContacts(),
                 loadSocial()
             ]);
         }
@@ -745,34 +729,6 @@
                 keywords: document.getElementById('seoKeywords').value
             });
             toast('SEO Salvo!', 'As configurações de SEO foram atualizadas.');
-        }
-
-        async function loadContacts() {
-            const contacts = await SiteData.sbGetContacts();
-            const container = document.getElementById('contactsList');
-            if (!contacts.length) {
-                container.innerHTML = '<div class="empty-state"><i class="fas fa-inbox"></i><p>Nenhum contato recebido ainda.</p></div>';
-                return;
-            }
-            container.innerHTML = '<div class="table-wrap"><table><thead><tr><th>Data</th><th>Nome</th><th>Email</th><th>Telefone</th><th>Serviço</th><th>Mensagem</th><th>Ações</th></tr></thead><tbody>' + contacts.map(c => `
-                <tr>
-                    <td style="white-space:nowrap;font-size:0.8rem;color:var(--text-dim)">${new Date(c.date).toLocaleDateString('pt-BR')}</td>
-                    <td><strong>${c.name}</strong>${c.company ? '<br><span style="font-size:0.8rem;color:var(--text-dim)">' + c.company + '</span>' : ''}</td>
-                    <td>${c.email}</td>
-                    <td>${c.phone || '-'}</td>
-                    <td>${c.service || '-'}</td>
-                    <td><span class="contact-msg" title="${c.message}">${c.message}</span></td>
-                    <td><button class="btn btn-danger btn-sm" onclick="deleteContact('${c.id}')"><i class="fas fa-trash"></i></button></td>
-                </tr>
-            `).join('') + '</tbody></table></div>';
-        }
-
-        async function deleteContact(id) {
-            if (confirm('Excluir esta mensagem?')) {
-                await SiteData.sbDeleteContact(id);
-                toast('Contato Excluído!', 'A mensagem foi removida.');
-                loadContacts();
-            }
         }
 
         async function loadSocial() {
@@ -1190,7 +1146,6 @@
                 loadBlog(),
                 loadMedia(),
                 loadTestimonials(),
-                loadContacts(),
                 loadSocial()
             ]);
         };

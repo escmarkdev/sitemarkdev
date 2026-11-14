@@ -13,10 +13,10 @@ const SiteData = {
   getDefault(key) {
     const defaults = {
       seo: {
-        title: 'ESC Marketing And Development | Agência Digital',
-        description: 'Profissionais com mais de 15 anos de mercado unidos para criar soluções digitais de alto impacto.',
+        title: 'ESC Marketing and Development | Tecnologia, Marketing e Design',
+        description: 'Desenvolvemos sites, sistemas e soluções digitais. Unimos tecnologia, marketing e design para fortalecer marcas e impulsionar negócios.',
         ogImage: 'assets/images/logo-esc.png',
-        keywords: ''
+        keywords: 'desenvolvimento web, desenvolvimento de sistemas, agência de marketing digital, design e branding, soluções digitais'
       },
       social: {
         linkedin: '#',
@@ -26,17 +26,13 @@ const SiteData = {
         youtube: '#'
       },
       contact: {
-        email: 'contato@escmarketing.com.br',
-        phone: '+55 (11) 99999-9999',
-        address: 'Av. Paulista, 1000 - São Paulo, SP',
+        email: '',
+        phone: '',
+        address: '',
         hours: 'Seg - Sex: 9h às 18h'
       },
       portfolio: [],
-      testimonials: [
-        { id: 'seed-t-1', name: 'Carlos Andrade', company: 'CEO, TechNova', text: 'A equipe da ESC trouxe uma visão renovada para nossa estratégia digital. A combinação de experiência de mercado com novas abordagens fez toda a diferença nos nossos resultados em apenas alguns meses.', rating: 5, avatar_initials: 'CA' },
-        { id: 'seed-t-2', name: 'Juliana Castro', company: 'Diretora de Marketing, BuildPrime', text: 'Desde o primeiro contato, percebemos o nível de profissionalismo da equipe. Entregaram além do combinado, com uma qualidade que raramente encontramos no mercado. Recomendo de olhos fechados.', rating: 5, avatar_initials: 'JC' },
-        { id: 'seed-t-3', name: 'Rafael Oliveira', company: 'Founder, CodeLab', text: 'O que mais nos impressionou foi o compromisso com a entrega. Mesmo sendo uma nova agência, o time demonstrou uma maturidade e expertise que nos deixou seguros desde o início. Resultado: projeto entregue no prazo e acima da expectativa.', rating: 5, avatar_initials: 'RO' }
-      ]
+      testimonials: []
     };
     return defaults[key] || null;
   },

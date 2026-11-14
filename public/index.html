@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESC Marketing And Development | Agência Digital</title>
-    <meta name="description" content="Profissionais com mais de 15 anos de mercado unidos para criar soluções digitais de alto impacto.">
-    <meta name="keywords" content="marketing digital, agência digital, SEO, desenvolvimento web">
+    <title>ESC Marketing and Development | Tecnologia, Marketing e Design</title>
+    <meta name="description" content="Desenvolvemos sites, sistemas e soluções digitais. Unimos tecnologia, marketing e design para fortalecer marcas e impulsionar negócios.">
+    <meta name="keywords" content="desenvolvimento web, desenvolvimento de sistemas, agência de marketing digital, design e branding, soluções digitais">
     <meta property="og:image" content="assets/images/logo-esc.png">
     <meta property="og:title" content="ESC Marketing And Development | Agência Digital">
     <meta property="og:description" content="Profissionais com mais de 15 anos de mercado unidos para criar soluções digitais de alto impacto.">
@@ -41,6 +41,8 @@
 
         html {
             scroll-behavior: smooth;
+            overflow-x: hidden;
+            max-width: 100%;
         }
 
         body {
@@ -48,6 +50,7 @@
             background: #ffffff;
             color: var(--text);
             overflow-x: hidden;
+            max-width: 100%;
             line-height: 1.6;
         }
 
@@ -1226,7 +1229,8 @@
             .faq-item { padding: 0; }
             .faq-question { padding: 1rem 1.2rem; font-size: 0.95rem; }
             .faq-item.active .faq-answer { padding: 0 1.2rem 1rem; }
-            .contact-form { padding: 0; }
+            .contact-form:not(#contactWhatsappCard) { padding: 0; }
+            #contactWhatsappCard { padding: 3rem 1.5rem; }
             .footer-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
             .footer-brand p { font-size: 0.85rem; }
             .newsletter-form { flex-wrap: wrap; }
@@ -1608,6 +1612,63 @@
             align-items: center; justify-content: center; transition: all 0.3s;
         }
         .post-modal .post-close:hover { background: var(--primary); }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 30px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 9997;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+            color: #fff;
+        }
+        .whatsapp-float .tooltip {
+            position: absolute;
+            right: 70px;
+            background: #333;
+            color: #fff;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            font-family: 'Poppins', sans-serif;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .whatsapp-float .tooltip::after {
+            content: '';
+            position: absolute;
+            right: -6px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 6px solid transparent;
+            border-left-color: #333;
+        }
+        .whatsapp-float:hover .tooltip {
+            opacity: 1;
+        }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); }
+            50% { box-shadow: 0 4px 25px rgba(37, 211, 102, 0.7); }
+        }
     </style>
 </head>
 <body>
@@ -1665,191 +1726,26 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="inicio">
-        <div class="hero-content">
-            <div class="hero-badge">Nova Agência, Experiência de Sobra</div>
-            <h1>
-                Transformamos Ideias em<br>
-                <span class="gradient-text">Experiências Digitais</span>
-            </h1>
-            <p>
-                Profissionais com mais de 15 anos de mercado unidos para criar soluções digitais 
-                de alto impacto que impulsionam o crescimento do seu negócio.
-            </p>
-            <div class="hero-buttons">
-                <a href="https://tally.so/r/aQzk7B" target="_blank" rel="noopener noreferrer" class="btn-primary">
-                    Iniciar Projeto <i class="fas fa-arrow-right"></i>
-                </a>
-                <a href="#portfolio" class="btn-secondary">
-                    Ver Portfólio <i class="fas fa-play"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Bar -->
-    <div class="stats-bar">
-        <div class="stat-item">
-            <div class="stat-number" data-count="15">0</div>
-            <div class="stat-label">Anos de Experiência</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-number" data-count="50">0</div>
-            <div class="stat-label">Projetos Realizados</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-number" data-count="8">0</div>
-            <div class="stat-label">Especialidades</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-number" data-count="100">0</div>
-            <div class="stat-label">% Compromisso</div>
-        </div>
-    </div>
+<section class="hero" id="inicio"><div class="hero-content"><div class="hero-badge">Tecnologia • Estratégia • Criatividade</div><h1>Transformamos ideias em<br><span class="gradient-text">soluções digitais que impulsionam negócios.</span></h1><p>Unimos tecnologia, estratégia e criatividade para desenvolver soluções digitais, fortalecer marcas e criar experiências que conectam empresas às oportunidades do futuro. Da concepção à implementação, ajudamos empreendedores e empresas a transformar desafios em projetos digitais.</p><div class="hero-buttons"><a href="#servicos" class="btn-primary">Conheça nossas soluções <i class="fas fa-arrow-right"></i></a><a href="#briefing" class="btn-secondary">Solicite um orçamento <i class="fas fa-arrow-right"></i></a></div></div></section>
 
     <!-- Services Section -->
-    <section id="servicos" class="parallax-section" data-speed="-0.05">
-        <div class="section-header animate-on-scroll">
-            <span class="section-tag">Nossos Serviços</span>
-            <h2>Soluções Completas para o seu Negócio</h2>
-            <p>Unimos expertise de mercado a novas abordagens para oferecer serviços digitais que realmente entregam resultado.</p>
-        </div>
-        <div class="services-grid stagger-children">
-            <div class="service-card animate-on-scroll animate-fade-left" data-service="desenvolvimento-web">
-                <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
-                <h3>Desenvolvimento Web</h3>
-                <p>Sites, landing pages e aplicações web com design moderno, performance otimizada e experiência do usuário excepcional.</p>
-                <ul class="service-features">
-                    <li><i class="fas fa-check"></i> Sites Responsivos</li>
-                    <li><i class="fas fa-check"></i> E-commerce Completo</li>
-                    <li><i class="fas fa-check"></i> Sistemas Web Customizados</li>
-                    <li><i class="fas fa-check"></i> APIs e Integrações</li>
-                </ul>
-                <a href="javascript:void(0)" class="service-link" onclick="openServicePosts('desenvolvimento-web')">Saiba mais <i class="fas fa-arrow-right"></i></a>
-            </div>
-
-            <div class="service-card animate-on-scroll animate-fade-right" data-service="marketing-digital">
-                <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
-                <h3>Marketing Digital</h3>
-                <p>Estratégias de marketing data-driven para aumentar visibilidade, gerar leads qualificados e maximizar ROI.</p>
-                <ul class="service-features">
-                    <li><i class="fas fa-check"></i> SEO & SEM</li>
-                    <li><i class="fas fa-check"></i> Gestão de Redes Sociais</li>
-                    <li><i class="fas fa-check"></i> Email Marketing</li>
-                    <li><i class="fas fa-check"></i> Analytics & BI</li>
-                </ul>
-                <a href="javascript:void(0)" class="service-link" onclick="openServicePosts('marketing-digital')">Saiba mais <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="service-card animate-on-scroll animate-scale-in" data-service="design-branding">
-                <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
-                <h3>Design & Branding</h3>
-                <p>Identidade visual impactante e design centrado no usuário que comunica valores e diferencia sua marca.</p>
-                <ul class="service-features">
-                    <li><i class="fas fa-check"></i> Identidade Visual</li>
-                    <li><i class="fas fa-check"></i> UI/UX Design</li>
-                    <li><i class="fas fa-check"></i> Motion Design</li>
-                    <li><i class="fas fa-check"></i> Design System</li>
-                </ul>
-                <a href="javascript:void(0)" class="service-link" onclick="openServicePosts('design-branding')">Saiba mais <i class="fas fa-arrow-right"></i></a>
-            </div>
-
-
-        </div>
-    </section>
+<section id="servicos" class="parallax-section" data-speed="-0.05"><div class="section-header animate-on-scroll"><span class="section-tag">Nossas Soluções</span><h2>Soluções completas para o seu negócio.</h2><p>Tecnologia, marketing e design trabalhando juntos para transformar desafios empresariais em oportunidades de crescimento.</p></div><div class="services-grid stagger-children">
+<div class="service-card animate-on-scroll animate-fade-left" data-service="desenvolvimento-web"><div class="service-icon"><i class="fas fa-laptop-code"></i></div><h3>Desenvolvimento Web e Sistemas</h3><p>Desenvolvemos sites, plataformas digitais, aplicações e sistemas personalizados para modernizar operações, automatizar processos e ampliar as possibilidades do seu negócio.</p><ul class="service-features"><li><i class="fas fa-check"></i> Sites institucionais e landing pages</li><li><i class="fas fa-check"></i> Lojas virtuais e e-commerce</li><li><i class="fas fa-check"></i> Sistemas e plataformas personalizados</li><li><i class="fas fa-check"></i> APIs, integrações e automações</li></ul><a href="javascript:void(0)" class="service-link" onclick="openServicePosts('desenvolvimento-web')">Conheça nossas soluções <i class="fas fa-arrow-right"></i></a></div>
+<div class="service-card animate-on-scroll animate-fade-right" data-service="marketing-digital"><div class="service-icon"><i class="fas fa-bullhorn"></i></div><h3>Marketing Digital</h3><p>Planejamos estratégias para fortalecer o posicionamento das marcas, ampliar sua presença online e ajudar empresas a conquistar novas oportunidades comerciais.</p><ul class="service-features"><li><i class="fas fa-check"></i> Planejamento de marketing digital</li><li><i class="fas fa-check"></i> SEO e campanhas de mídia paga</li><li><i class="fas fa-check"></i> Gestão de redes sociais</li><li><i class="fas fa-check"></i> Conteúdo, Analytics e BI</li></ul><a href="javascript:void(0)" class="service-link" onclick="openServicePosts('marketing-digital')">Conheça nossas soluções <i class="fas fa-arrow-right"></i></a></div>
+<div class="service-card animate-on-scroll animate-scale-in" data-service="design-branding"><div class="service-icon"><i class="fas fa-paint-brush"></i></div><h3>Design e Branding</h3><p>Desenvolvemos identidades visuais e experiências digitais que traduzem a essência dos negócios, fortalecem marcas e qualificam a comunicação com seus públicos.</p><ul class="service-features"><li><i class="fas fa-check"></i> Identidade visual e branding</li><li><i class="fas fa-check"></i> UI/UX Design</li><li><i class="fas fa-check"></i> Design de interfaces digitais</li><li><i class="fas fa-check"></i> Motion Design e Design Systems</li></ul><a href="javascript:void(0)" class="service-link" onclick="openServicePosts('design-branding')">Conheça nossas soluções <i class="fas fa-arrow-right"></i></a></div></div></section>
 
     <!-- About Section -->
-    <section id="sobre" style="background: #fcfcff;" class="parallax-section" data-speed="0.04">
-        <div class="about-container">
-            <div class="about-content animate-on-scroll">
-                <h2>
-                    Uma Nova Agência com <span class="gradient-text">Experiência de Verdade</span>
-                </h2>
-                <p>
-                    A ESC Marketing And Development nasce da união de profissionais que acumulam 
-                    mais de 15 anos de experiência em marketing digital, desenvolvimento e design. 
-                    Chegamos para oferecer soluções de alto nível com o frescor de quem está 
-                    começando e a segurança de quem já fez isso muitas vezes.
-                </p>
-                <div class="about-features">
-                    <div class="about-feature">
-                        <i class="fas fa-lightbulb"></i>
-                        <div>
-                            <h4>Estratégia Data-Driven</h4>
-                            <p>Decisões baseadas em dados e análise de métricas</p>
-                        </div>
-                    </div>
-                    <div class="about-feature">
-                        <i class="fas fa-rocket"></i>
-                        <div>
-                            <h4>Entrega Ágil</h4>
-                            <p>Metodologias ágeis para resultados rápidos</p>
-                        </div>
-                    </div>
-                    <div class="about-feature">
-                        <i class="fas fa-shield-alt"></i>
-                        <div>
-                            <h4>Segurança & Compliance</h4>
-                            <p>Práticas seguras e conformidade com LGPD</p>
-                        </div>
-                    </div>
-                    <div class="about-feature">
-                        <i class="fas fa-headset"></i>
-                        <div>
-                            <h4>Suporte 24/7</h4>
-                            <p>Atendimento contínuo e suporte técnico</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="about-visual animate-on-scroll">
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=500&fit=crop" alt="Equipe ESC Marketing">
-                </div>
-                <div class="experience-badge">
-                    <span class="years">15+</span>
-                    <span class="text">Anos de Experiência</span>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="sobre" style="background:#fcfcff;" class="parallax-section" data-speed="0.04"><div class="about-container"><div class="about-content animate-on-scroll"><h2>Uma agência com <span class="gradient-text">experiência, visão e compromisso.</span></h2><p>A ESC Marketing and Development reúne experiência profissional, conhecimento tecnológico e visão estratégica de negócios. Atuamos na integração entre desenvolvimento de software, marketing digital e design, oferecendo soluções para empresas e empreendedores que desejam aproveitar as oportunidades do ambiente digital.</p><p>Acreditamos que a tecnologia deve estar a serviço das pessoas e dos negócios. Por isso, cada projeto começa com a compreensão das necessidades do cliente e evolui por meio de planejamento, criatividade e execução técnica.</p><div class="about-features"><div class="about-feature"><i class="fas fa-lightbulb"></i><div><h4>Visão estratégica</h4><p>Compreensão dos objetivos antes de definir a solução.</p></div></div><div class="about-feature"><i class="fas fa-layer-group"></i><div><h4>Soluções integradas</h4><p>Tecnologia, marketing e design em uma atuação complementar.</p></div></div><div class="about-feature"><i class="fas fa-sliders-h"></i><div><h4>Projetos personalizados</h4><p>Soluções alinhadas às necessidades de cada negócio.</p></div></div><div class="about-feature"><i class="fas fa-comments"></i><div><h4>Parceria e comunicação</h4><p>Alinhamento e acompanhamento ao longo do projeto.</p></div></div></div></div><div class="about-visual animate-on-scroll"><div class="about-image"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=500&fit=crop" alt="Profissionais colaborando em um projeto digital"></div></div></div></section>
 
     <!-- Process Section -->
-    <section class="process-section parallax-section" data-speed="-0.03">
-        <div class="section-header animate-on-scroll">
-            <span class="section-tag">Como Trabalhamos</span>
-            <h2>Nosso Processo em 4 Etapas</h2>
-            <p>Um fluxo de trabalho estruturado e transparente para garantir a excelência em cada projeto.</p>
-        </div>
-        <div class="process-grid stagger-children">
-            <div class="process-card animate-on-scroll animate-zoom-in">
-                <div class="process-number">1</div>
-                <h3>Descoberta</h3>
-                <p>Análise profunda do seu negócio, público-alvo, concorrência e objetivos para definir a estratégia ideal.</p>
-            </div>
-            <div class="process-card animate-on-scroll animate-fade-up">
-                <div class="process-number">2</div>
-                <h3>Estratégia</h3>
-                <p>Planejamento detalhado com definição de KPIs, cronograma, tecnologias e alocação de recursos.</p>
-            </div>
-            <div class="process-card animate-on-scroll animate-scale-in">
-                <div class="process-number">3</div>
-                <h3>Execução</h3>
-                <p>Desenvolvimento ágil com entregas incrementais, testes contínuos e feedback do cliente.</p>
-            </div>
-            <div class="process-card animate-on-scroll animate-fade-right">
-                <div class="process-number">4</div>
-                <h3>Escalar</h3>
-                <p>Lançamento, monitoramento de performance, otimização contínua e suporte pós-entrega.</p>
-            </div>
-        </div>
-    </section>
+<section class="process-section parallax-section" data-speed="-0.03"><div class="section-header animate-on-scroll"><span class="section-tag">Como Trabalhamos</span><h2>Do planejamento à realização: quatro etapas.</h2><p>Um processo organizado para compreender suas necessidades, desenvolver soluções e acompanhar a evolução de cada projeto.</p></div><div class="process-grid stagger-children"><div class="process-card animate-on-scroll animate-zoom-in"><div class="process-number">1</div><h3>Descoberta</h3><p>Conhecemos seu negócio, identificamos necessidades, compreendemos desafios e definimos os objetivos do projeto.</p></div><div class="process-card animate-on-scroll animate-fade-up"><div class="process-number">2</div><h3>Estratégia</h3><p>Planejamos a solução, estruturamos o escopo, definimos prioridades e estabelecemos o direcionamento técnico e criativo.</p></div><div class="process-card animate-on-scroll animate-scale-in"><div class="process-number">3</div><h3>Execução</h3><p>Transformamos o planejamento em realidade, desenvolvendo e implementando o projeto com acompanhamento profissional.</p></div><div class="process-card animate-on-scroll animate-fade-right"><div class="process-number">4</div><h3>Evolução</h3><p>Avaliamos a entrega, identificamos possibilidades de aprimoramento e planejamos novas oportunidades de evolução.</p></div></div></section>
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="parallax-section" data-speed="0.05">
         <div class="section-header animate-on-scroll">
             <span class="section-tag">Portfólio</span>
-            <h2>Projetos que Fazem a Diferença</h2>
-            <p>Conheça alguns dos projetos que desenvolvemos. Clique nas imagens abaixo para saber mais sobre os projetos.</p>
+            <h2>Ideias que se transformam em experiências digitais.</h2>
+            <p>Conheça projetos que representam nossa experiência em desenvolvimento, tecnologia, marketing e design.</p>
         </div>
         <div class="portfolio-grid stagger-children" id="portfolioGrid"></div>
     </section>
@@ -1858,8 +1754,8 @@
     <section style="background: #f6f7fb;" class="parallax-section" data-speed="-0.04">
         <div class="section-header animate-on-scroll">
             <span class="section-tag">Depoimentos</span>
-            <h2>O que Nossos Clientes Dizem</h2>
-            <p>Feedbacks de quem já conhece o trabalho e a expertise dos nossos profissionais.</p>
+            <h2>O que nossos clientes dizem.</h2>
+            <p>A confiança dos nossos clientes é parte fundamental da nossa trajetória.</p>
         </div>
         <div class="testimonials-container">
             <div class="testimonial-slider" id="testimonialSlider"></div>
@@ -1870,192 +1766,47 @@
     <section id="briefing" class="parallax-section" data-speed="0.03" style="background: #fff5f9;">
         <div class="section-header animate-on-scroll">
             <span class="section-tag">Orçamento Personalizado</span>
-            <h2>Solicite seu <span class="gradient-text">Briefing</span></h2>
-            <p>Cada projeto é único. Conte-nos sobre sua ideia e receba um orçamento feito sob medida para o seu negócio.</p>
+            <h2>Vamos desenvolver algo incrível juntos?</h2>
+            <p>Toda grande solução começa com uma boa ideia. Conte-nos sobre seu negócio, seus desafios e seus objetivos. Nossa equipe analisará as informações para identificar as melhores possibilidades para o seu projeto.</p>
         </div>
         <div class="cta-box animate-on-scroll" style="max-width:900px;margin:0 auto;text-align:center;">
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-bottom:2.5rem;position:relative;">
                 <div>
                     <div style="width:60px;height:60px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.5rem;color:#fff;">1</div>
                     <h4 style="font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:0.5rem;">Conte sua Ideia</h4>
-                    <p style="color:var(--text-muted);font-size:0.9rem;">Descreva seu projeto, objetivos e expectativas</p>
+                    <p style="color:var(--text-muted);font-size:0.9rem;">Apresente seu projeto, objetivos e expectativas.</p>
                 </div>
                 <div>
                     <div style="width:60px;height:60px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.5rem;color:#fff;">2</div>
                     <h4 style="font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:0.5rem;">Analisamos</h4>
-                    <p style="color:var(--text-muted);font-size:0.9rem;">Nossa equipe avalia e prepara a melhor estratégia</p>
+                    <p style="color:var(--text-muted);font-size:0.9rem;">Compreendemos as necessidades e avaliamos os caminhos possíveis.</p>
                 </div>
                 <div>
                     <div style="width:60px;height:60px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.5rem;color:#fff;">3</div>
-                    <h4 style="font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:0.5rem;">Receba o Orçamento</h4>
-                    <p style="color:var(--text-muted);font-size:0.9rem;">Proposta personalizada em até 24 horas</p>
+                    <h4 style="font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:0.5rem;">Receba uma proposta</h4>
+                    <p style="color:var(--text-muted);font-size:0.9rem;">Proposta alinhada ao escopo do projeto.</p>
                 </div>
             </div>
             <a href="https://tally.so/r/aQzk7B" rel="noopener noreferrer" class="btn-primary" style="display:inline-flex;cursor:pointer!important;position:relative;z-index:2;">
-                Solicitar Orçamento <i class="fas fa-arrow-right"></i>
+                Enviar meu briefing <i class="fas fa-arrow-right"></i>
             </a>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section style="background: #f6f7fb;" class="parallax-section" data-speed="-0.02">
-        <div class="section-header animate-on-scroll">
-            <span class="section-tag">FAQ</span>
-            <h2>Dúvidas Frequentes</h2>
-            <p>Tire suas dúvidas sobre nossos serviços e processo de trabalho.</p>
-        </div>
-        <div class="faq-container">
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>Quanto tempo leva para desenvolver um site?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>O prazo varia conforme a complexidade do projeto. Um site institucional simples leva em média 2-4 semanas, enquanto projetos mais complexos como e-commerce ou sistemas customizados podem levar 2-3 meses. Sempre fornecemos um cronograma detalhado no início do projeto.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>Vocês oferecem suporte após a entrega?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>Sim! Todos os nossos projetos incluem um período de garantia e suporte técnico. Além disso, oferecemos planos de manutenção mensal que incluem atualizações, backups, monitoramento de segurança e suporte prioritário.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>Como funciona o processo de pagamento?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>Trabalhamos com pagamentos parcelados conforme entregas de milestone. Geralmente dividimos em 3 parcelas: 30% na contratação, 40% na entrega do protótipo/design, e 30% na entrega final. Aceitamos transferência, PIX e cartão de crédito.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>Posso acompanhar o andamento do projeto?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>Absolutamente! Utilizamos ferramentas de gestão de projetos como Trello, Jira ou Monday.com onde você pode acompanhar cada etapa em tempo real. Além disso, realizamos reuniões semanais de acompanhamento e demos de progresso.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>Vocês trabalham com clientes de outras cidades/países?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>Sim! Atendemos clientes em todo o Brasil e em mais de 12 países. Nossa equipe está adaptada ao trabalho remoto e utilizamos ferramentas de colaboração que permitem uma comunicação fluida independente da localização geográfica.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section style="background:#f6f7fb;" class="parallax-section" data-speed="-0.02"><div class="section-header animate-on-scroll"><span class="section-tag">FAQ</span><h2>Dúvidas frequentes.</h2><p>Respostas para algumas das principais dúvidas sobre nossos serviços e formas de trabalho.</p></div><div class="faq-container">
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Quais serviços a ESC oferece?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Atuamos em três grandes áreas: desenvolvimento web e sistemas, marketing digital e design e branding. Também desenvolvemos projetos que integram essas competências.</p></div></div>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>A ESC desenvolve projetos personalizados?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Sim. Os projetos são planejados conforme as necessidades, características e objetivos apresentados por cada cliente.</p></div></div>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Como funciona o processo de contratação?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>O primeiro passo é preencher nosso briefing ou entrar em contato. A partir das informações recebidas, compreendemos a necessidade, avaliamos o escopo e apresentamos uma proposta comercial.</p></div></div>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Quanto custa desenvolver um site ou sistema?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>O investimento depende da complexidade, das funcionalidades, dos recursos necessários e do escopo do projeto. Cada proposta considera essas características.</p></div></div>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Posso contratar apenas um serviço?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Sim. É possível contratar individualmente desenvolvimento, marketing ou design, conforme a necessidade do negócio.</p></div></div>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>A ESC atende empresas de outras cidades e estados?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Sim. Os serviços digitais permitem desenvolver projetos e estabelecer parcerias com empresas e empreendedores de diferentes localidades.</p></div></div></div></section>
 
     <!-- Contact Section -->
-    <section id="contato" class="parallax-section" data-speed="0.06">
-        <div class="contact-container">
-            <div class="contact-info animate-on-scroll">
-                <h2>Vamos Criar Algo <span class="gradient-text">Incrível</span> Juntos?</h2>
-                <p>Entre em contato conosco e descubra como podemos ajudar o seu negócio a crescer.</p>
-                <div class="contact-details">
-                    <div class="contact-detail">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>contato@escmarketing.com.br</p>
-                        </div>
-                    </div>
-                    <div class="contact-detail">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Telefone</h4>
-                            <p>+55 (11) 99999-9999</p>
-                        </div>
-                    </div>
-                    <div class="contact-detail">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Endereço</h4>
-                            <p>Av. Paulista, 1000 - São Paulo, SP</p>
-                        </div>
-                    </div>
-                    <div class="contact-detail">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <h4>Horário</h4>
-                            <p>Seg - Sex: 9h às 18h</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-social">
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-            <div class="contact-form animate-on-scroll">
-                <form id="contactForm" onsubmit="handleSubmit(event)">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Nome</label>
-                            <input type="text" id="name" name="name" required placeholder="Seu nome completo">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required placeholder="seu@email.com">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="phone">Telefone</label>
-                            <input type="tel" id="phone" name="phone" placeholder="(11) 99999-9999">
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Serviço de Interesse</label>
-                            <select id="service" name="service" required>
-                                <option value="">Selecione...</option>
-                                <option value="web">Desenvolvimento Web</option>
-                                <option value="marketing">Marketing Digital</option>
-                                <option value="design">Design & Branding</option>
-                                <option value="outro">Outro</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="company">Empresa</label>
-                        <input type="text" id="company" name="company" placeholder="Nome da sua empresa">
-                    </div>
-                    <div class="form-group">
-                            <label for="message">Mensagem</label>
-                            <textarea id="message" name="message" required placeholder="Sua mensagem ou dúvida sobre nossos serviços..."></textarea>
-                        </div>
-                    <button type="submit" class="submit-btn">
-                        <i class="fas fa-paper-plane"></i> Enviar Mensagem
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
+<section id="contato" class="parallax-section" data-speed="0.06"><div class="contact-container"><div class="contact-info animate-on-scroll"><h2>Vamos conversar sobre seu <span class="gradient-text">próximo projeto?</span></h2><p>Entre em contato com a ESC Marketing and Development e descubra como podemos ajudar a transformar suas ideias em soluções digitais.</p><div class="contact-details"><div class="contact-detail"><i class="fas fa-globe"></i><div><h4>Atendimento online</h4><p>Projetos para empresas e empreendedores de diferentes localidades.</p></div></div><div class="contact-detail"><i class="fas fa-comments"></i><div><h4>Converse com nossa equipe</h4><p>Apresente sua necessidade e fale sobre as possibilidades do seu projeto.</p></div></div></div></div><div class="contact-form animate-on-scroll" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:4rem 2.5rem;" id="contactWhatsappCard"><div style="font-size:4rem;color:#25D366;margin-bottom:1.5rem;"><i class="fab fa-whatsapp"></i></div><h3 style="font-family:'Poppins',sans-serif;font-size:1.6rem;font-weight:700;color:var(--secondary);margin-bottom:0.8rem;">Fale conosco pelo WhatsApp</h3><p style="color:var(--text-muted);font-size:1rem;margin-bottom:2rem;max-width:400px;">Prefere uma conversa direta? Entre em contato e apresente sua ideia à nossa equipe.</p><a href="https://wa.me/5511967357517" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display:inline-flex;align-items:center;gap:0.8rem;padding:1rem 2.5rem;font-size:1.1rem;"><i class="fab fa-whatsapp" style="font-size:1.4rem;"></i> Fale conosco</a></div></div></section>
 
     <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="cta-box animate-on-scroll">
-            <h2>Pronto para Transformar seu Negócio?</h2>
-            <p>Seja um dos primeiros a experimentar o que acontece quando unimos expertise de mercado com novas ideias. Vamos acelerar seu crescimento digital juntos.</p>
-            <div class="cta-buttons">
-                <a href="https://tally.so/r/aQzk7B" target="_blank" rel="noopener noreferrer" class="btn-primary">
-                    <i class="fas fa-rocket"></i> Iniciar Projeto
-                </a>
-                <a href="#portfolio" class="btn-secondary">
-                    <i class="fas fa-eye"></i> Ver Cases de Sucesso
-                </a>
-            </div>
-        </div>
-    </section>
+<section class="cta-section"><div class="cta-box animate-on-scroll"><h2>Pronto para transformar seu negócio?</h2><p>Tecnologia, estratégia e criatividade podem abrir novos caminhos para sua empresa. Conte com a ESC para planejar, desenvolver e implementar soluções digitais alinhadas aos seus objetivos.</p><div class="cta-buttons"><a href="#briefing" class="btn-primary"><i class="fas fa-rocket"></i> Vamos começar?</a><a href="#servicos" class="btn-secondary" style="color:var(--secondary);border-color:var(--secondary);"><i class="fas fa-eye"></i> Conheça nossas soluções</a></div></div></section>
 
     <!-- Footer -->
     <footer>
@@ -2064,7 +1815,7 @@
                 <a href="#inicio" class="logo">
                     <img src="assets/images/logo-esc.png" alt="ESC Marketing">
                 </a>
-                <p>Nova agência formada por profissionais com mais de 15 anos de experiência em marketing e tecnologia. Transformamos ideias em resultados digitais de alto impacto.</p>
+                <p>Desenvolvimento, marketing e design integrados para empresas e empreendedores que desejam inovar, crescer e conquistar novas oportunidades.</p>
                 <div class="newsletter-form">
                     <input type="email" placeholder="Seu email para newsletter" id="newsletterEmail">
                     <button onclick="subscribeNewsletter()"><i class="fas fa-arrow-right"></i></button>
@@ -2099,7 +1850,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p> 2026 ESC Marketing And Development. Todos os direitos reservados.</p>
+            <p>© 2026 ESC Marketing and Development. Todos os direitos reservados.</p>
             <div class="footer-bottom-links">
                 <a href="privacidade.html">Política de Privacidade</a>
                 <a href="termos.html">Termos de Serviço</a>
@@ -2153,6 +1904,12 @@
         </div>
         <button class="toast-close" onclick="hideToast()"><i class="fas fa-times"></i></button>
     </div>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/5511967357517" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Fale conosco pelo WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="tooltip">Fale conosco!</span>
+    </a>
 
     <script src="assets/js/supabase.js?v=7"></script>
     <script src="assets/js/site-data.js?v=7"></script>
@@ -2306,6 +2063,7 @@
         const testimonialSlider = document.getElementById('testimonialSlider');
 
         function renderTestimonialCards(items) {
+            if (!items || items.length === 0) { testimonialSlider.innerHTML = '<div class="testimonial-card" style="grid-column:1/-1;text-align:center;"><p class="testimonial-text">Estamos preparando este espaço para apresentar experiências e avaliações reais de nossos clientes.</p></div>'; return; }
             testimonialSlider.innerHTML = items.map(t => {
                 const rating = parseInt(t.rating) || 5;
                 const stars = '<i class="fas fa-star"></i>'.repeat(rating) + (rating < 5 ? '<i class="fas fa-star" style="opacity:0.3"></i>'.repeat(5 - rating) : '');
@@ -2328,8 +2086,8 @@
 
         async function renderTestimonials() {
             const cached = SiteData.get('testimonials');
-            if (cached) renderTestimonialCards(cached);
-            const items = await SiteData.sbGetTestimonials();
+            if (cached) renderTestimonialCards(cached.filter(item => !String(item.id || '').startsWith('seed-')));
+            const items = (await SiteData.sbGetTestimonials()).filter(item => !String(item.id || '').startsWith('seed-'));
             renderTestimonialCards(items);
         }
 
@@ -2347,22 +2105,6 @@
             if (!wasActive) {
                 item.classList.add('active');
             }
-        }
-
-        // Form submission
-        async function handleSubmit(e) {
-            e.preventDefault();
-            const data = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                service: document.getElementById('service').value,
-                company: document.getElementById('company').value,
-                message: document.getElementById('message').value
-            };
-            await SiteData.sbAddContact(data);
-            e.target.reset();
-            showToast('Mensagem Recebida!', 'Obrigado pelo contato! Responderemos em até 24 horas.');
         }
 
         // Toast
@@ -2530,16 +2272,7 @@
             const grid = document.getElementById('portfolioGrid');
             const portfolioPosts = await SiteData.sbGetBlogPosts('portfolio');
             let portfolioItems = portfolioPosts;
-            if (!portfolioItems || portfolioItems.length === 0) {
-                portfolioItems = [
-                    { id: 'fallback-1', title: 'Loja Virtual Premium', tag: 'E-commerce', description: 'Plataforma de e-commerce com +300% de conversão', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop', cta_text: 'Ver Projeto', cta_url: '#' },
-                    { id: 'fallback-2', title: 'Aplicativo de Delivery', tag: 'App Mobile', description: 'App nativo com 50k+ downloads em 3 meses', image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&h=400&fit=crop', cta_text: 'Ver Projeto', cta_url: '#' },
-                    { id: 'fallback-3', title: 'Dashboard Analytics', tag: 'SaaS', description: 'Sistema de BI com processamento em tempo real', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop', cta_text: 'Ver Projeto', cta_url: '#' },
-                    { id: 'fallback-4', title: 'Campanha Digital', tag: 'Marketing', description: 'ROI de 450% em campanha de performance', image: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&h=400&fit=crop', cta_text: 'Ver Projeto', cta_url: '#' },
-                    { id: 'fallback-5', title: 'Plataforma Financeira', tag: 'Fintech', description: 'Sistema bancário digital com segurança enterprise', image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop', cta_text: 'Ver Projeto', cta_url: '#' },
-                    { id: 'fallback-6', title: 'Site Institucional', tag: 'Corporativo', description: 'Presença digital de marca Fortune 500', image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&h=400&fit=crop', cta_text: 'Ver Projeto', cta_url: '#' }
-                ];
-            }
+            if (!portfolioItems || portfolioItems.length === 0) portfolioItems = [];
             cachedPortfolioPosts = portfolioItems;
             if (grid) {
                 const variants = ['animate-zoom-in', 'animate-fade-up', 'animate-scale-in', 'animate-fade-left', 'animate-fade-right', 'animate-flip-up'];
