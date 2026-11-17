@@ -13,10 +13,10 @@ const SiteData = {
   getDefault(key) {
     const defaults = {
       seo: {
-        title: 'ESC Marketing and Development | Tecnologia, Marketing e Design',
-        description: 'Desenvolvemos sites, sistemas e soluções digitais. Unimos tecnologia, marketing e design para fortalecer marcas e impulsionar negócios.',
-        ogImage: 'assets/images/logo-esc.png',
-        keywords: 'desenvolvimento web, desenvolvimento de sistemas, agência de marketing digital, design e branding, soluções digitais'
+        title: 'ESC Sistemas & Comunica\u00e7\u00e3o | Tecnologia, Marketing e Solu\u00e7\u00f5es Digitais',
+        description: 'A ESC Sistemas & Comunica\u00e7\u00e3o desenvolve sites, sistemas e solu\u00e7\u00f5es digitais, integrando tecnologia, marketing e design para fortalecer marcas e impulsionar neg\u00f3cios.',
+        ogImage: 'assets/images/logo_nova.png',
+        keywords: 'ESC Sistemas e Comunica\u00e7\u00e3o, desenvolvimento web, desenvolvimento de sistemas, marketing digital, design, branding, solu\u00e7\u00f5es digitais'
       },
       social: {
         linkedin: '#',
@@ -63,8 +63,10 @@ const SiteData = {
 
   async sbGetSeo() {
     const row = await this.sbGet('seo');
-    if (row) return { title: row.title, description: row.description, ogImage: row.og_image, keywords: row.keywords || '' };
-    return this.getWithFallback('seo');
+    const data = row ? { title: row.title, description: row.description, ogImage: row.og_image, keywords: row.keywords || '' } : this.getWithFallback('seo');
+    data.title = String(data.title || this.getDefault('seo').title).replace(/ESC Marketing(?: and Development)?/gi, 'ESC Sistemas & Comunica\u00e7\u00e3o');
+    data.ogImage = 'assets/images/logo_nova.png';
+    return data;
   },
   async sbSetSeo(d) {
     const ok = await this.sbSet('seo', { title: d.title, description: d.description, og_image: d.ogImage, keywords: d.keywords });

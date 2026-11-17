@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Admin - ESC Marketing [V5]</title>
+        <title>Admin - ESC Sistemas & Comunica&#231;&#227;o [V5]</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -335,7 +335,7 @@
 
     <div class="login-screen" id="loginScreen">
         <div class="login-box">
-            <div class="logo"><img src="../assets/images/logo-esc.png" alt="ESC Marketing"></div>
+            <div class="logo"><img src="../assets/images/logo_nova.png" alt="ESC Sistemas & Comunica&#231;&#227;o"></div>
             <h1>Acesso Administrativo</h1>
             <p>Insira sua senha para acessar o painel</p>
             <input type="password" id="loginPassword" placeholder="Senha" onkeydown="if(event.key==='Enter'){doLogin()}">
@@ -346,7 +346,7 @@
 
     <div class="admin-layout" id="adminLayout">
         <aside class="sidebar">
-            <a href="../index.html" class="logo"><img src="../assets/images/logo-esc.png" alt="ESC Marketing"></a>
+            <a href="../index.html" class="logo"><img src="../assets/images/logo_nova.png" alt="ESC Sistemas & Comunica&#231;&#227;o"></a>
             <nav class="sidebar-nav">
                 <button class="active" data-section="seo"><i class="fas fa-search"></i> <span>SEO</span></button>
                 <button data-section="blog"><i class="fas fa-blog"></i> <span>Blog</span></button>
@@ -390,7 +390,7 @@
                 <div class="card">
                     <div class="form-group">
                         <label>Título do Site (Title Tag)</label>
-                        <input type="text" id="seoTitle" placeholder="ESC Marketing And Development | Agência Digital">
+                        <input type="text" id="seoTitle" placeholder="ESC Sistemas & Comunica&#231;&#227;o | Agência Digital">
                     </div>
                     <div class="form-group">
                         <label>Meta Description</label>
@@ -398,7 +398,7 @@
                     </div>
                     <div class="form-group">
                         <label>URL da Imagem OG (Open Graph)</label>
-                        <input type="text" id="seoOgImage" placeholder="assets/images/logo-esc.png">
+                        <input type="text" id="seoOgImage" placeholder="assets/images/logo_nova.png">
                     </div>
                     <div class="form-group">
                         <label>Palavras-chave (Keywords)</label>
@@ -410,7 +410,7 @@
                     <h2>Pré-visualização no Google</h2>
                     <div style="background:var(--darker);border-radius:12px;padding:1.2rem;border:1px solid var(--dark-light);margin-top:0.5rem;">
                         <p style="color:#8ab4f8;font-size:0.85rem;margin-bottom:0.2rem;" id="seoPreviewUrl">escmarketing.com.br</p>
-                        <p style="font-size:1.1rem;color:#8ab4f8;margin-bottom:0.3rem;text-decoration:underline;" id="previewTitle">ESC Marketing And Development | Agência Digital</p>
+                        <p style="font-size:1.1rem;color:#8ab4f8;margin-bottom:0.3rem;text-decoration:underline;" id="previewTitle">ESC Sistemas & Comunica&#231;&#227;o | Agência Digital</p>
                         <p style="color:#bdc1c6;font-size:0.85rem;" id="previewDesc">Profissionais com mais de 15 anos de mercado unidos para criar soluções digitais de alto impacto.</p>
                     </div>
                 </div>
@@ -711,7 +711,7 @@
         }
 
         function updatePreview() {
-            const title = document.getElementById('seoTitle').value || 'ESC Marketing';
+            const title = document.getElementById('seoTitle').value || 'ESC Sistemas & Comunica&#231;&#227;o';
             const desc = document.getElementById('seoDescription').value || '';
             document.getElementById('previewTitle').textContent = title;
             document.getElementById('previewDesc').textContent = desc;
