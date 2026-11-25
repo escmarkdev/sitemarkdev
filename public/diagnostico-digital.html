@@ -293,6 +293,89 @@
     .cta-aside { flex-shrink: 0; }
     .cta-aside small { display: block; color: rgba(255,255,255,.58); font-size: .74rem; margin-top: 13px; text-align: center; }
 
+    /* Regulation modal */
+    .regulation-trigger {
+      display: inline-flex; align-items: center; gap: 8px; border: 0; padding: 0;
+      margin-top: 12px; color: rgba(255,255,255,.78); background: transparent;
+      font: inherit; font-size: .82rem; font-weight: 600; text-decoration: underline;
+      text-underline-offset: 4px; cursor: pointer;
+    }
+    .regulation-trigger:hover { color: #fff; }
+    .footer-regulation {
+      border: 0; padding: 0; background: transparent; color: rgba(255,255,255,.76);
+      font: inherit; font-size: .82rem; text-decoration: underline;
+      text-underline-offset: 3px; cursor: pointer;
+    }
+    .footer-regulation:hover { color: #ff68aa; }
+    .regulation-modal {
+      width: min(920px, calc(100% - 28px)); max-width: none; max-height: 86vh;
+      margin: auto; padding: 0; border: 0; border-radius: 22px; overflow: hidden;
+      color: var(--text); background: #fff; box-shadow: 0 30px 100px rgba(0,0,0,.42);
+    }
+    .regulation-modal::backdrop { background: rgba(12,8,32,.78); backdrop-filter: blur(5px); }
+    .regulation-modal-header {
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+      padding: 22px 28px; color: #fff;
+      background: linear-gradient(120deg, #100b2c, #1a1340 70%, #30205b);
+    }
+    .regulation-modal-header span {
+      display: block; color: #ff78b4; font-size: .68rem; font-weight: 700;
+      letter-spacing: 1.8px; text-transform: uppercase; margin-bottom: 4px;
+    }
+    .regulation-modal-header h2 { font-size: clamp(1.15rem, 3vw, 1.55rem); line-height: 1.2; }
+    .regulation-close {
+      flex: 0 0 42px; width: 42px; height: 42px; border: 1px solid rgba(255,255,255,.28);
+      border-radius: 50%; color: #fff; background: rgba(255,255,255,.09);
+      font-size: 1.45rem; cursor: pointer; display: grid; place-items: center;
+    }
+    .regulation-close:hover { background: rgba(255,255,255,.2); }
+    .regulation-content { padding: 27px 32px 34px; overflow-y: auto; max-height: calc(86vh - 88px); }
+    .regulation-lead {
+      padding: 17px 19px; border-left: 4px solid var(--primary); border-radius: 0 12px 12px 0;
+      background: #fff4f8; color: #51465d; font-size: .91rem; margin-bottom: 25px;
+    }
+    .regulation-section { margin-top: 25px; }
+    .regulation-section h3 {
+      color: var(--secondary); font-size: 1.02rem; line-height: 1.35;
+      margin-bottom: 9px; display: flex; align-items: center; gap: 9px;
+    }
+    .regulation-section h3 span {
+      flex: 0 0 27px; width: 27px; height: 27px; display: grid; place-items: center;
+      border-radius: 8px; color: #fff; background: var(--primary); font-size: .72rem;
+    }
+    .regulation-section p, .regulation-section li { color: var(--muted); font-size: .86rem; }
+    .regulation-section p + p { margin-top: 8px; }
+    .regulation-section ul, .regulation-section ol { padding-left: 21px; margin-top: 9px; }
+    .regulation-section li { padding-left: 3px; margin: 5px 0; }
+    .regulation-pillars {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 12px;
+    }
+    .regulation-pillar {
+      padding: 13px 15px; border: 1px solid var(--line); border-radius: 12px;
+      color: var(--secondary); font-size: .84rem; font-weight: 600; background: #fff;
+    }
+    .regulation-pillar b { color: var(--primary); margin-right: 7px; }
+    .regulation-classifications { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 12px; }
+    .regulation-classification {
+      padding: 13px; border-radius: 12px; background: var(--soft);
+      color: var(--secondary); font-size: .8rem; font-weight: 700;
+    }
+    .regulation-classification small { display: block; color: var(--muted); font-size: .72rem; font-weight: 400; margin-top: 5px; line-height: 1.45; }
+    .regulation-note {
+      margin-top: 24px; padding: 15px 18px; border-radius: 12px;
+      background: #f0f8fc; color: #52616b; font-size: .8rem;
+    }
+    .regulation-modal-footer {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      border-top: 1px solid var(--line); padding-top: 20px; margin-top: 26px;
+    }
+    .regulation-modal-footer p { color: var(--muted); font-size: .76rem; }
+    .regulation-done {
+      border: 0; border-radius: 999px; padding: 11px 20px; color: #fff;
+      background: var(--primary); font: inherit; font-size: .84rem; font-weight: 700; cursor: pointer;
+    }
+    .regulation-done:hover { background: var(--primary-dark); }
+
     /* FAQ */
     .faq-section { padding: 100px 0; background: #fff; }
     .faq-list { max-width: 850px; margin: 0 auto; display: grid; gap: 12px; }
@@ -387,6 +470,14 @@
         font-size: .9rem; font-weight: 700; box-shadow: 0 10px 28px rgba(26,19,64,.25);
       }
       body { padding-bottom: 76px; }
+    }
+    @media (max-width: 760px) {
+      .regulation-modal { width: calc(100% - 16px); max-height: 90vh; border-radius: 17px; }
+      .regulation-modal-header { padding: 17px 18px; }
+      .regulation-content { padding: 20px 18px 25px; max-height: calc(90vh - 76px); }
+      .regulation-pillars, .regulation-classifications { grid-template-columns: 1fr; }
+      .regulation-modal-footer { align-items: stretch; flex-direction: column; }
+      .regulation-done { width: 100%; }
     }
     @media (max-width: 420px) {
       .brand img { width: 155px; }
@@ -621,6 +712,9 @@
             <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Solicitar diagnóstico gratuito
           </a>
           <small>Atendimento inicial pelo WhatsApp</small>
+          <button class="regulation-trigger" type="button" data-open-regulation aria-haspopup="dialog">
+            <i class="fa-regular fa-file-lines" aria-hidden="true"></i> Consulte o regulamento do diagnóstico
+          </button>
         </div>
       </div>
     </section>
@@ -672,6 +766,7 @@
         <div class="footer-links">
           <a href="https://escdev.com.br/" target="_blank" rel="noopener noreferrer">Site ESC</a>
           <a href="https://wa.me/5573988439373?text=Quero%20saber%20mais%20sobre%20o%20Diagn%C3%B3stico%20Digital%20do%20meu%20neg%C3%B3cio." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <button class="footer-regulation" type="button" data-open-regulation aria-haspopup="dialog">Regulamento do diagnóstico</button>
         </div>
       </div>
       <div class="footer-bottom">
@@ -680,6 +775,127 @@
       </div>
     </div>
   </footer>
+
+  <dialog class="regulation-modal" id="regulation-modal" aria-labelledby="regulation-title">
+    <div class="regulation-modal-header">
+      <div>
+        <span>ESC Sistemas & Comunicação</span>
+        <h2 id="regulation-title">Regulamento do Diagnóstico Digital</h2>
+      </div>
+      <button class="regulation-close" type="button" data-close-regulation aria-label="Fechar regulamento">×</button>
+    </div>
+    <div class="regulation-content">
+      <p class="regulation-lead">
+        O Diagnóstico Digital do Seu Negócio é uma avaliação inicial e gratuita para ajudar empresas
+        a compreender como utilizam tecnologia, gestão, marketing e comunicação e a reconhecer
+        oportunidades de melhoria compatíveis com sua realidade.
+      </p>
+
+      <section class="regulation-section">
+        <h3><span>1</span> Objeto e gratuidade</h3>
+        <p>O diagnóstico é oferecido pela ESC Sistemas & Comunicação a empresários, comerciantes,
+        profissionais autônomos e organizações interessados em compreender melhor a situação atual
+        de seus negócios nos aspectos digitais e de comunicação.</p>
+        <p>A participação na avaliação inicial é gratuita e não implica obrigação de contratar
+        serviços ou produtos da ESC.</p>
+      </section>
+
+      <section class="regulation-section">
+        <h3><span>2</span> Áreas consideradas na avaliação</h3>
+        <p>A análise é organizada em quatro dimensões. A profundidade de cada observação considera
+        as características, o segmento e o momento da empresa.</p>
+        <div class="regulation-pillars">
+          <div class="regulation-pillar"><b>01</b> Presença Digital</div>
+          <div class="regulation-pillar"><b>02</b> Gestão Digital</div>
+          <div class="regulation-pillar"><b>03</b> Marketing Estratégico</div>
+          <div class="regulation-pillar"><b>04</b> Comunicação e Identidade de Marca</div>
+        </div>
+      </section>
+
+      <section class="regulation-section">
+        <h3><span>3</span> Como o diagnóstico é realizado</h3>
+        <ol>
+          <li><strong>Contato inicial:</strong> o interessado apresenta brevemente a empresa e manifesta interesse na avaliação.</li>
+          <li><strong>Levantamento de informações:</strong> a ESC solicita dados sobre o negócio, seus canais digitais, ferramentas utilizadas, dificuldades e objetivos.</li>
+          <li><strong>Análise inicial:</strong> a equipe considera as informações fornecidas e observa canais e recursos públicos disponíveis. Quando necessário, poderá solicitar esclarecimentos complementares.</li>
+          <li><strong>Devolutiva:</strong> são apresentados os pontos positivos, aspectos que merecem atenção, oportunidades e recomendações iniciais, em conversa ou reunião conforme o caso.</li>
+          <li><strong>Possíveis encaminhamentos:</strong> após a devolutiva, poderão ser apresentadas soluções da ESC quando houver relação entre a necessidade identificada e os serviços ou produtos disponíveis.</li>
+        </ol>
+      </section>
+
+      <section class="regulation-section">
+        <h3><span>4</span> Classificação dos resultados</h3>
+        <p>Para organizar as observações de cada dimensão, a avaliação poderá utilizar três classificações qualitativas:</p>
+        <div class="regulation-classifications">
+          <div class="regulation-classification">Adequado
+            <small>Estrutura funcional naquele aspecto, sem intervenção prioritária identificada na avaliação inicial.</small>
+          </div>
+          <div class="regulation-classification">Ponto de atenção
+            <small>Fragilidades ou oportunidades que merecem acompanhamento e planejamento.</small>
+          </div>
+          <div class="regulation-classification">Prioridade de melhoria
+            <small>Necessidade relevante que merece atenção mais imediata por parte da empresa.</small>
+          </div>
+        </div>
+        <p>Essas categorias servem para organizar as observações e recomendações. Não representam
+        certificação, pontuação técnica, ranking ou garantia de desempenho.</p>
+      </section>
+
+      <section class="regulation-section">
+        <h3><span>5</span> Natureza e limites do diagnóstico</h3>
+        <p>O Diagnóstico Digital é uma análise inicial, orientativa e estratégica. Não constitui
+        auditoria técnica, consultoria completa, nem avaliação fiscal,
+        contábil ou financeira. Também não substitui análises especializadas nessas áreas.</p>
+        <p>As observações dependem das informações disponibilizadas e dos aspectos que puderem ser
+        examinados no escopo da avaliação. A ESC procurará distinguir o que foi observado diretamente
+        daquilo que foi informado pelo responsável pelo negócio.</p>
+        <p>As recomendações indicam possibilidades de melhoria. A ESC não garante aumento de vendas,
+        faturamento, conquista de clientes ou qualquer resultado específico decorrente delas.</p>
+      </section>
+
+      <section class="regulation-section">
+        <h3><span>6</span> Recomendações e soluções da ESC</h3>
+        <p>As recomendações podem envolver serviços de desenvolvimento de sites e sistemas,
+        marketing estratégico, comunicação de marca, identidade visual e design, ou produtos digitais
+        da ESC que sejam compatíveis com a necessidade identificada.</p>
+        <p>Nenhuma solução será indicada apenas por fazer parte do catálogo. A eventual proposta
+        comercial deverá explicar a relação entre a necessidade observada e a solução sugerida.
+        A contratação, seus custos e suas condições serão tratados separadamente, após a apresentação
+        do diagnóstico.</p>
+      </section>
+
+      <section class="regulation-section">
+        <h3><span>7</span> Informações e confidencialidade</h3>
+        <p>As informações fornecidas pelo responsável e os dados observados durante o atendimento
+        serão tratados com confidencialidade e utilizados para a finalidade do diagnóstico e do
+        relacionamento comercial autorizado pelo interessado.</p>
+        <p>O responsável pelo negócio deve compartilhar informações corretas e atualizadas e somente
+        materiais que esteja autorizado a disponibilizar. A equipe da ESC não solicita senhas ou
+        credenciais pessoais. Caso seja necessária a consulta a algum ambiente privado, o acesso
+        deverá ocorrer por procedimento seguro e autorizado, sem compartilhamento de senhas.</p>
+      </section>
+
+      <section class="regulation-section">
+        <h3><span>8</span> Participação e decisão de contratação</h3>
+        <p>A solicitação do diagnóstico representa interesse em iniciar uma avaliação, não um compromisso
+        de compra. Após receber a devolutiva, o responsável decide livremente se deseja conversar sobre
+        alguma solução ou encerrar o atendimento.</p>
+        <p>A abordagem da ESC é orientada pela compreensão das necessidades do negócio e pela
+        recomendação responsável. Não há obrigação de contratação nem pressão para aceitar propostas.</p>
+      </section>
+
+      <div class="regulation-note">
+        <strong>Importante:</strong> o diagnóstico oferece uma visão inicial para apoiar a compreensão
+        do negócio e orientar próximos passos. A implementação de melhorias, quando desejada, é uma
+        etapa independente e depende de avaliação e contratação próprias.
+      </div>
+
+      <div class="regulation-modal-footer">
+        <p>ESC Sistemas & Comunicação<br>Diagnóstico Digital do Seu Negócio</p>
+        <button class="regulation-done" type="button" data-close-regulation>Fechar regulamento</button>
+      </div>
+    </div>
+  </dialog>
 
   <a class="whatsapp-float" href="https://wa.me/5573988439373?text=Quero%20saber%20mais%20sobre%20o%20Diagn%C3%B3stico%20Digital%20do%20meu%20neg%C3%B3cio." target="_blank" rel="noopener noreferrer" aria-label="Solicitar diagnóstico pelo WhatsApp">
     <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
@@ -690,6 +906,24 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const regulationModal = document.getElementById('regulation-modal');
+    const regulationOpeners = document.querySelectorAll('[data-open-regulation]');
+    const regulationClosers = document.querySelectorAll('[data-close-regulation]');
+
+    if (regulationModal && typeof regulationModal.showModal === 'function') {
+      regulationOpeners.forEach((button) => {
+        button.addEventListener('click', () => regulationModal.showModal());
+      });
+
+      regulationClosers.forEach((button) => {
+        button.addEventListener('click', () => regulationModal.close());
+      });
+
+      regulationModal.addEventListener('click', (event) => {
+        if (event.target === regulationModal) regulationModal.close();
+      });
+    }
   </script>
 </body>
 </html>
